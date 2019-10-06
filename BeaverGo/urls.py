@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 
-from mainapp.views import get_index, get_signup
+from mainapp.views import get_index, get_signup, get_provider
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^signup', get_signup),
+    url(r'^provider', get_provider),
     url(r'^', get_index),
 ]
