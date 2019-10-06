@@ -12,6 +12,16 @@ def get_signup(request):
 	return render(request, 'signup.html', {'title': title, 'home': home})
 
 def get_provider(request):
-	title = "Provider Application"
+	title = "Provider Signup Page"
 	home = "BeaverGo"
 	return render(request, 'provider.html', {'title': title, 'home': home})
+
+def get_passenger(request):
+	title = "Passenger Signup Page"
+	home = "BeaverGo"
+	return render(request, 'passenger.html', {'title': title, 'home': home})
+
+def get_driver(request):
+	title = "Driver Signup Page"
+	home = "BeaverGo"
+	return render(request, 'driver.html', {'title': title, 'home': home})
