@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>BeaverGo - Provider Signup Page</title>
+        <title>BeaverGo - Passenger Signup Page</title>
         <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/jumbotron/">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
@@ -40,8 +40,8 @@
         </nav>
         <div class="jumbotron">
             <div class="container" style="padding-top: 3rem">
-                <h1 class="display-3">Signing up as a Provider</h1>
-                <p>Provider is to privider your car(s) to us, and your car(s) will become a texi working for you.</p>
+                <h1 class="display-3">Signing up as a Passenger</h1>
+                <p>Passenger is a to have a car picked you up to somewhere else.</p>
             </div>
         </div>
         <!-- Example row of columns -->
@@ -129,31 +129,24 @@
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="bankaccount">Bank Account Number</label>
-                        <input type="text" class="form-control" id="bankacnum" placeholder="" required>
+                        <label for="creditcard">Credit Card Number</label>
+                        <input type="text" class="form-control" id="creditcard" placeholder="" required>
                         <div class="invalid-feedback">
                             Bank Account Number is required.
                         </div>
                     </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="routingnumber">Routing Number</label>
-                        <input type="text" class="form-control" id="routingnumber" placeholder="" required>
+                    <div class="col-md-2 mb-3">
+                        <label for="cvccvv">CVC/CVV</label>
+                        <input type="text" class="form-control" id="cvccvv" placeholder="123" required>
                         <div class="invalid-feedback">
-                            Routing Number is required.
+                            CVC/CVV is required.
                         </div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="ssn">SSN</label>
-                        <input type="text" class="form-control" id="ssn" placeholder="" required>
+                    <div class="col-md-2 mb-3">
+                        <label for="expiredate">Expriation Date</label>
+                        <input type="text" class="form-control" id="expiredate" placeholder="MM/YY" required>
                         <div class="invalid-feedback">
-                            SSN is required.
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="licenceplate">Licence Plate</label>
-                        <input type="text" class="form-control" id="licenceplate" placeholder="" required>
-                        <div class="invalid-feedback">
-                            Licence Plate is required.
+                            Expriation Date is required.
                         </div>
                     </div>
                     <div class="col-md-2 mb-3">
