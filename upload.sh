@@ -1,22 +1,24 @@
 #!/bin/bash
-echo 'Update Progress...'
-echo '================='
+LightGreen='\033[1;32m'
+White='\033[1;37m'
+echo -e "${White}Update Progress..."
+echo -e "${White}================="
 git add .
 echo -n "add commit to the repo: "
 read input
 
 
 git commit -m "$input"
-echo "git commit -m \"$input\" --Done"
+echo -e "${LightGreen}git commit -m \"$input\" --Done"
 git checkout master
-echo 'git git checkout master --Done'
+echo -e "${LightGreen}git git checkout master --Done"
 git merge dev
-echo 'git merge dev --Done'
+echo -e "${LightGreen}git merge dev --Done"
 git push origin master
-echo 'git push origin master --Done'
+echo -e "${LightGreen}git push origin master --Done"
 git checkout dev
-echo 'git checkout dev --Done'
+echo -e "${LightGreen}git checkout dev --Done"
 git push origin dev
-echo 'git push origin dev --Done'
-echo '================='
-echo 'Done'
+echo -e "${LightGreen}git push origin dev --Done"
+echo -e "${White}================="
+echo -e "${White}Done"
