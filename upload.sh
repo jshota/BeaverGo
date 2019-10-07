@@ -3,7 +3,7 @@ Green='\033[0;32m'
 White='\033[1;37m'
 NC='\033[0m'
 echo -e "${White}Update Progress...${NC}"
-echo -e "${White}=================${NC}"
+echo -e "${White}=================${NC}${Green}"
 git add .
 echo -n "add commit to the repo: "
 read input
