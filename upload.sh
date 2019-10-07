@@ -2,12 +2,12 @@
 echo 'Update Progress...'
 echo '================='
 git add .
-echo -n "add commit to the repo:"
+echo -n "add commit to the repo: "
 read input
 
 
 git commit -m "$input"
-echo "git commit -m $input --Done"
+echo "git commit -m \"$input\" --Done"
 git checkout master
 echo 'git git checkout master --Done'
 git merge dev
