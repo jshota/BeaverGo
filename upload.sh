@@ -23,4 +23,4 @@ echo -e "${Green}git checkout dev --Done${NC}"
 git push origin dev
 echo -e "${Green}git push origin dev --Done${NC}"
 echo -e "${White}=================${NC}"
-echo -e "${White}Done${NC}"
+echo -e "${White}Updated Complete${NC}"
