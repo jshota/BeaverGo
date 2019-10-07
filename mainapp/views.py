@@ -21,7 +21,7 @@ def get_provider(request):
 
 def get_passenger(request):
 	title = "Passenger Signup Page"
-	home = "BeaverGo"
+	home = "Beaver"
 	return render(request, 'passenger.html', {'title': title, 'home': home})
 
 def get_driver(request):
