@@ -21,7 +21,7 @@ def get_provider(request):
 
 def get_passenger(request):
 	title = "Passenger Signup Page"
-	home = "BeaverGo"
+	home = "BeaverGogo"
 	return render(request, 'passenger.html', {'title': title, 'home': home})
 
 def get_driver(request):
@@ -36,4 +36,3 @@ def github_webhook(request):
             os.system("git pull")
             return HttpResponse('Done')
         return HttpResponse('Use POST please')
-
