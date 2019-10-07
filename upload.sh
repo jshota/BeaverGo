@@ -7,7 +7,7 @@ read input
 
 
 git commit -m "$input"
-echo 'git commit -m "$input" --Done'
+echo 'git commit -m $input --Done'
 git checkout master
 echo 'git git checkout master --Done'
 git merge dev
