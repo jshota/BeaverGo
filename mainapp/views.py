@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+import os
 
 # Create your views here.
 
@@ -25,3 +28,12 @@ def get_driver(request):
 	title = "Driver Signup Page"
 	home = "BeaverGo"
 	return render(request, 'driver.html', {'title': title, 'home': home})
+
+@csrf_exempt
+def github_webhook(request):
+        if request.method == 'POST':
+            os.chdir('/home/ubuntu/BeaverGo')
+            os.system("git pull")
+            return HttpResponse('Done')
+        return HttpResponse('Use POST please')
+
