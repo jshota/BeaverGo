@@ -21,10 +21,10 @@ from mainapp.views import get_index, get_signup, get_provider, get_passenger, ge
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^signup', get_signup),
-    url(r'^provider', get_provider),
-    url(r'^passenger', get_passenger),
-    url(r'^driver', get_driver),
+    url(r'^signup$', get_signup),
+    url(r'^provider$', get_provider),
+    url(r'^passenger$', get_passenger),
+    url(r'^driver$', get_driver),
     url(r'^postreceive', github_webhook),
-    url(r'^', get_index),
+    url(r'^$', get_index),
 ]
