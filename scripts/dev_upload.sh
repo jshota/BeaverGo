@@ -9,6 +9,7 @@ git pull
 echo -e "${Green}git pull --Done${NC}"
 git add .
 echo -e "${Green}git add . --Done${NC}"
+echo -e "${White}=================${NC}"
 echo "Comment examples:"
 echo "  Add: a function to get user's location"
 echo "  Fix: unable to login"

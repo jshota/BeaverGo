@@ -6,19 +6,42 @@ echo -e "${White}Update Progress...${NC}"
 echo -e "${White}=================${NC}"
 git add .
 echo -e "${Green}git add . --Done${NC}"
+echo -e "${White}=================${NC}"
 echo "Comment examples:"
 echo "  Add: a function to get user's location"
 echo "  Fix: unable to login"
 echo "  Change: home page title"
 echo "  Chord: test"
 echo -e "${White}=================${NC}"
-echo "Select your "
-
-echo -n "Leave your comment here: "
+echo "Select your commit type:"
+echo "1. Add"
+echo "2. Fix"
+echo "3. Change"
+echo "4. Chord"
 
 read input
 
-git commit -m "$input"
+case $input in
+    1) 
+        input='Add: '
+    ;;
+    2) 
+        input='Fix: '
+    ;; 
+    3) 
+        input='Change: '
+    ;;
+    4) 
+        input='Chord: '
+    ;;
+esac
+
+echo -e "${White}=================${NC}"
+echo -n "Leave your comment here: "
+
+read comment
+
+git commit -m "$input$comment"
 echo -e "${Green}git commit -m \"$input\" --Done${NC}"
 git checkout master
 echo -e "${Green}git git checkout master --Done${NC}"
