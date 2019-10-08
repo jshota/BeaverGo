@@ -6,9 +6,17 @@ echo -e "${White}Update Progress...${NC}"
 echo -e "${White}=================${NC}"
 git add .
 echo -e "${Green}git add . --Done${NC}"
-echo -n "add commit to the repo: "
-read input
+echo "Comment examples:"
+echo "  Add: a function to get user's location"
+echo "  Fix: unable to login"
+echo "  Change: home page title"
+echo "  Chord: test"
+echo -e "${White}=================${NC}"
+echo "Select your "
 
+echo -n "Leave your comment here: "
+
+read input
 
 git commit -m "$input"
 echo -e "${Green}git commit -m \"$input\" --Done${NC}"
