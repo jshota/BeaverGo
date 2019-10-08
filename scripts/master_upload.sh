@@ -4,6 +4,7 @@ White='\033[1;37m'
 NC='\033[0m'
 echo -e "${White}Update Progress...${NC}"
 echo -e "${White}=================${NC}"
+cd ..
 git add .
 echo -e "${Green}git add . --Done${NC}"
 echo -e "${White}=================${NC}"
