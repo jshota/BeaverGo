@@ -5,6 +5,8 @@ NC='\033[0m'
 echo -e "${White}Update Progress...${NC}"
 echo -e "${White}=================${NC}"
 cd ..
+git checkout dev
+echo -e "${Green}git checkout to dev --Done${NC}"
 git pull
 echo -e "${Green}git pull --Done${NC}"
 git add .
@@ -25,16 +27,16 @@ echo "4. Chord"
 read input
 
 case $input in
-    1) 
+    1)
         input='Add: '
     ;;
-    2) 
+    2)
         input='Fix: '
-    ;; 
-    3) 
+    ;;
+    3)
         input='Change: '
     ;;
-    4) 
+    4)
         input='Chord: '
     ;;
 esac
@@ -46,8 +48,6 @@ read comment
 
 git commit -m "$input$comment"
 echo -e "${Green}git commit -m \"$input\" --Done${NC}"
-git merge dev
-echo -e "${Green}git merge dev --Done${NC}"
 git push origin dev
 echo -e "${Green}git push origin dev --Done${NC}"
 echo -e "${White}=================${NC}"
