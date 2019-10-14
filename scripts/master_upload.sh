@@ -5,6 +5,8 @@ NC='\033[0m'
 echo -e "${White}Update Progress...${NC}"
 echo -e "${White}=================${NC}"
 cd ..
+git pull
+echo -e "${Green}git pull --Done${NC}"
 git add .
 echo -e "${Green}git add . --Done${NC}"
 echo -e "${White}=================${NC}"
@@ -45,7 +47,7 @@ read comment
 git commit -m "$input$comment"
 echo -e "${Green}git commit -m \"$input\" --Done${NC}"
 git checkout master
-echo -e "${Green}git git checkout master --Done${NC}"
+echo -e "${Green}git checkout master --Done${NC}"
 git rebase dev
 echo -e "${Green}git rebase dev --Done${NC}"
 git push origin master
