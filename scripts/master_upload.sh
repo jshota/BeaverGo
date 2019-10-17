@@ -23,16 +23,16 @@ echo "4. Chord"
 read input
 
 case $input in
-    1) 
+    1)
         input='Add: '
     ;;
-    2) 
+    2)
         input='Fix: '
-    ;; 
-    3) 
+    ;;
+    3)
         input='Change: '
     ;;
-    4) 
+    4)
         input='Chord: '
     ;;
 esac
@@ -46,8 +46,8 @@ git commit -m "$input$comment"
 echo -e "${Green}git commit -m \"$input\" --Done${NC}"
 git checkout master
 echo -e "${Green}git git checkout master --Done${NC}"
-git merge dev
-echo -e "${Green}git merge dev --Done${NC}"
+git rebase dev
+echo -e "${Green}git rebase dev --Done${NC}"
 git push origin master
 echo -e "${Green}git push origin master --Done${NC}"
 git checkout dev
