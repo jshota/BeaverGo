@@ -5,6 +5,8 @@ NC='\033[0m'
 echo -e "${White}Update Progress...${NC}"
 echo -e "${White}=================${NC}"
 cd ..
+git checkout dev
+echo -e "${Green}git checkout to dev --Done${NC}"
 git pull
 echo -e "${Green}git pull --Done${NC}"
 git add .
