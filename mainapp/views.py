@@ -29,5 +29,8 @@ def github_webhook(request):
         if request.method == 'POST':
             os.chdir('/home/ubuntu/BeaverGo')
             os.system("git pull")
+            os.system("git add .")
+            os.system("git commit -m 'Server: update'")
+            os.system("git push origin master")
             return HttpResponse('Done')
         return HttpResponse('Use POST please')
