@@ -5,6 +5,7 @@
 db.sqlite3
 
 # no pycache file
-./BeaverGo/__pycache__/
-./BeaverGo/accounts/__pycache__/
-./BeaverGo/accounts/migrations/
+BeaverGo/__pycache__/
+accounts/__pycache__/
+accounts/migrations/
+accounts/__pycache__/
