@@ -1,2 +1,10 @@
 # no mac DS_Store
 *.DS_Store
+
+# no database file
+db.sqlite3
+
+# no pycache file
+./BeaverGo/__pycache__/
+./BeaverGo/accounts/__pycache__/
+./BeaverGo/accounts/migrations/
