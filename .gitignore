@@ -2,7 +2,7 @@
 *.DS_Store
 
 # no database file
-db.sqlite3
+#db.sqlite3
 
 # no pycache file
 #BeaverGo/__pycache__/
