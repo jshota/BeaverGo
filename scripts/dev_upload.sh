@@ -7,8 +7,6 @@ echo -e "${White}=================${NC}"
 cd ..
 git checkout dev
 echo -e "${Green}git checkout to dev --Done${NC}"
-rm db.sqlite3
-echo -e "${Green}rm db.sqlite3 --Done${NC}"
 git pull
 echo -e "${Green}git pull --Done${NC}"
 git add .
