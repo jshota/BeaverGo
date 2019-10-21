@@ -1,16 +1,21 @@
 {% extends 'base.html' %}
-
 {% block title %}Home{% endblock %}
-
 {% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-  <p><a href="{% url 'password_reset' %}">reset password</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
-  <p>SignUp</p>
-  <a href="{% url 'signup' %}">SignUp</a>
-{% endif %}
+	{% if user.is_authenticated %}
+		Hi {{ user.username }}!
+		<form class="form-inline my-2 my-lg-0" style="align-items: right">
+			<div>
+				<input type="button" class="btn btn-outline-success my-2 my-sm-0" value="Log Out" onclick="window.location.href='{% url 'logout' %}'"/></button>
+				<input type="button" class="btn btn-outline-primary my-2 my-sm-0" value="Reset Password" onclick="window.location.href='{% url 'password_reset' %}'"/></button>
+			</div>
+		</form>
+	{% else %}
+		<p>You are not logged in</p>
+		<form class="form-inline my-2 my-lg-0" style="align-items: right">
+			<div>
+				<input type="button" class="btn btn-outline-success my-2 my-sm-0" value="Log In" onclick="window.location.href='{% url 'login' %}'"/></button>
+				<input type="button" class="btn btn-outline-primary my-2 my-sm-0" value="Sign Up" onclick="window.location.href='{% url 'signup' %}'"/></button>
+			</div>
+		</form>
+	{% endif %}
 {% endblock %}
