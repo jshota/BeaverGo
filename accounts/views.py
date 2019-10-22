@@ -1,17 +1,19 @@
-from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views import generic
-
-
-class SignUp(generic.CreateView):
-    form_class = UserCreationForm
+from django.views.generic.edit import CreateView
+from django.shortcuts import render
+from django.http import HttpResponse
+from .forms import CustomUserCreationForm
+from django.contrib.auth.decorators import login_required
+class SignUp(CreateView):
+    form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'signup.html'
-def view_profile(request, pk=None):
-    if pk:
-        user = User.objects.get(pk=pk)
-    else:
-        user = request.user
-    args = {'user': user}
-    return render(request, 'accounts/profile.html', args)
+
+@login_required
+def profile_view(request):
+    profile = CustomUserCreationForm.objects.get(user=request.user)
+    context = {
+        'profile': profile
+    }
+    template = 'accounts/profile.html'
+    return render(request, template, context)

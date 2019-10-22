@@ -53,7 +53,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'BeaverGo.urls'
-LOGIN_REDIRECT_URL = 'home' 
+LOGIN_REDIRECT_URL = 'home'
+AUTH_USER_MODEL = 'accounts.CustomUser'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
