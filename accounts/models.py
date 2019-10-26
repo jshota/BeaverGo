@@ -48,8 +48,8 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return self.username
 
-#def create_profile(sender, **kwargs):
-#    if kwargs['created']:
-#        user_profile = CustomUser.objects.create(user=kwargs['instance'])
+# def create_profile(sender, **kwargs):
+#     if kwargs['created']:
+#         user_profile = CustomUser.objects.create(user=kwargs['instance'])
 
-#post_save.connect(create_profile, sender=CustomUser)
+# post_save.connect(create_profile, sender=CustomUser)
