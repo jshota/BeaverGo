@@ -1,14 +1,73 @@
 {% extends 'base.html' %}
-{% block title %}Home{% endblock %}
+{% block title %}BeaverGo{% endblock %}
 {% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  HI {{ user.ssn}}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-  <p><a href="{% url 'password_reset' %}">reset password</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
-  <a href="{% url 'signup' %}">SignUp</a>
-{% endif %}
+	{% if user.is_authenticated %}
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<a class="navbar-brand" href="/">BeaverGo</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<form class="form-inline my-2 my-lg-0">
+					<div>
+						<a href="{% url 'logout' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Log Out</button></a>
+						<a href="{% url 'password_reset' %}"><button class="btn btn-outline-primary my-2 my-sm-0" type="button">Reset Password</button></a>
+					</div>
+				</form>
+			</div>
+		</nav>
+		Hi {{ user.username }}!
+		HI {{ user.ssn}}!
+	{% else %}
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<a class="navbar-brand" href="/">BeaverGo</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<form class="form-inline my-2 my-lg-0">
+					<div>
+						<a href="{% url 'login' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Log In</button></a>
+						<a href="{% url 'signup' %}"><button class="btn btn-outline-primary my-2 my-sm-0" type="button">Sign Up</button></a>
+					</div>
+				</form>
+			</div>
+		</nav>
+		<p style="padding-top: 4rem">You are not logged in</p>
+	{% endif %}
+	<main role="main">
+		<!-- Main jumbotron for a primary marketing message or call to action -->
+		<div class="jumbotron">
+			<div class="container" style="padding-top: 3.5rem">
+				<h1 class="display-3">Welcome to BeaverGo</h1>
+				<p>This is a platform provided for people who wants to provide their car earning money while they don't need their cars.</p>
+				<!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
+			</div>
+		</div>
+		<div class="container">
+			<!-- Example row of columns -->
+			<div class="row">
+				<div class="col-md-4">
+					<h2>Heading</h2>
+					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+					</p>
+					<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+				</div>
+				<div class="col-md-4">
+					<h2>Heading</h2>
+					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+					</p>
+					<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+				</div>
+				<div class="col-md-4">
+					<h2>Heading</h2>
+					<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+					amet risus.</p>
+					<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+				</div>
+			</div>
+			<hr>
+		</div>
+		<!-- /container -->
+	</main>
 {% endblock %}
