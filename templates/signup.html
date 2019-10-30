@@ -40,6 +40,10 @@
             {{ form.ssn.errors }}
         </p>
         <p>
+            {% render_field form.phone placeholder=form.phone.label%}
+            {{ form.phone.errors }}
+        </p>
+        <p>
             {% render_field form.image placeholder=form.profile_image.label%}
             {{ form.email.errors }}
         </p>
