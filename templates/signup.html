@@ -14,7 +14,7 @@
             </form>
         </div>
     </nav>
-    <form method="post" style="padding-top: 10%" class="text-center">
+    <form method="post" style="padding-top: 1%" class="text-center">
         <img class="mb-4" src="https://raw.githubusercontent.com/jshota/BeaverGo/dev/logo.png" alt="" width="200" height="200">
         <h2>Please Sign up</h2>
         {% csrf_token %}
@@ -38,6 +38,14 @@
         <p>
             {% render_field form.ssn placeholder=form.ssn.label%}
             {{ form.ssn.errors }}
+        </p>
+        <p>
+                {% render_field form.first_name placeholder=form.first_name.label%}
+                {{ form.first_name.errors }}
+        </p>
+        <p>
+                {% render_field form.last_name placeholder=form.last_name.label%}
+                {{ form.last_name.errors }}
         </p>
         <p>
             {% render_field form.phone placeholder=form.phone.label%}
