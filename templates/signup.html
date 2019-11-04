@@ -47,6 +47,10 @@
                 {% render_field form.last_name placeholder=form.last_name.label%}
                 {{ form.last_name.errors }}
         </p>
+        <p>
+            {% render_field form.address placeholder=form.address.label%}
+            {{ form.address.errors }}
+        </p>
         <p>Please select your gender:</p>
         <input type="radio" name="gender" value="male"> Male<br>
         <input type="radio" name="gender" value="female"> Female<br>

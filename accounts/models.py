@@ -42,6 +42,7 @@ class CustomUser(AbstractUser):
     last_name = models.CharField(max_length=150)
     first_name = models.CharField(max_length=150)
     gender = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
     ssn = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=50)
