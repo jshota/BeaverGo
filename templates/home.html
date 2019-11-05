@@ -15,6 +15,7 @@
 					<div>
 						<font color="#FDF370">Hi {{ user.username }}!&nbsp;&nbsp;</font>
 						<font color="#B1AA4E">SSN: {{ user.ssn}}&nbsp;&nbsp;</font>
+						<a href="{% url 'profile_view' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">View Profile</button></a>
 						<a href="{% url 'logout' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Log Out</button></a>
 						<a href="{% url 'password_reset' %}"><button class="btn btn-outline-primary my-2 my-sm-0" type="button">Reset Password</button></a>
 					</div>

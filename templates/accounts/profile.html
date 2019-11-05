@@ -1,16 +1,35 @@
 {% extends 'base.html' %}
-
 {% block head %}
-<title>Profile</title>
+	<title>Profile</title>
 {% endblock %}
-
 {% block content %}
-<div class="container">
-    <h1>Profile</h1>
-    <p>Username: {{ user.username }}</p>
-    <p>Email: {{ user.email }}</p>
-    <p>ssn:{{user.ssn}}</p>
-    <p>Phone:{{user.phone}}</p>
-</div>
-
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<a class="navbar-brand" href="/">BeaverGo</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<img class="mb-0" src="https://raw.githubusercontent.com/jshota/BeaverGo/dev/logo.png" alt="" width="50" height="50">
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav mr-auto">
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<div>
+					<font color="#FDF370">Hi {{ user.username }}!&nbsp;&nbsp;</font>
+					<font color="#B1AA4E">SSN: {{ user.ssn}}&nbsp;&nbsp;</font>
+					<a href="{% url 'profile_view' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">View Profile</button></a>
+					<a href="{% url 'logout' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Log Out</button></a>
+					<a href="{% url 'password_reset' %}"><button class="btn btn-outline-primary my-2 my-sm-0" type="button">Reset Password</button></a>
+				</div>
+			</form>
+		</div>
+	</nav>
+	<div class="container" style="padding-top: 5rem">
+		<h1>Profile</h1>
+		<p>Username: {{ user.username }}</p>
+		<p>First name: {{ user.first_name }}</p>
+		<p>Last name: {{ user.last_name }}</p>
+		<p>Email: {{ user.email }}</p>
+		<p>ssn: {{user.ssn}}</p>
+		<p>Phone: {{user.phone}}</p>
+	</div>
 {% endblock %}
