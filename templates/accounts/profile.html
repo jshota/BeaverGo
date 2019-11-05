@@ -6,6 +6,7 @@
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 		<a class="navbar-brand" href="/">BeaverGo</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		<img class="mb-0" src="https://raw.githubusercontent.com/jshota/BeaverGo/dev/logo.png" alt="" width="50" height="50">
 		<span class="navbar-toggler-icon"></span>
 		</button>
 		<img class="mb-0" src="https://raw.githubusercontent.com/jshota/BeaverGo/dev/logo.png" alt="" width="50" height="50">
@@ -14,8 +15,7 @@
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
 				<div>
-					<font color="#FDF370">Hi {{ user.username }}!&nbsp;&nbsp;</font>
-					<font color="#B1AA4E">SSN: {{ user.ssn}}&nbsp;&nbsp;</font>
+					<font color="#FDF370">Hi {{ user.first_name }}!&nbsp;&nbsp;</font>
 					<a href="{% url 'profile_view' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">View Profile</button></a>
 					<a href="{% url 'logout' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Log Out</button></a>
 					<a href="{% url 'password_reset' %}"><button class="btn btn-outline-primary my-2 my-sm-0" type="button">Reset Password</button></a>
