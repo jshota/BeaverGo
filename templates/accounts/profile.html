@@ -16,7 +16,6 @@
 			<form class="form-inline my-2 my-lg-0">
 				<div>
 					<font color="#FDF370">Hi {{ user.first_name }}!&nbsp;&nbsp;</font>
-					<a href="{% url 'profile_view' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">View Profile</button></a>
 					<a href="{% url 'logout' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Log Out</button></a>
 					<a href="{% url 'password_reset' %}"><button class="btn btn-outline-primary my-2 my-sm-0" type="button">Reset Password</button></a>
 				</div>
