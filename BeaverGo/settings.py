@@ -37,11 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mapbox_location_field',
+    'django.contrib.gis',
     'accounts',
     'widget_tweaks',
 
 ]
-
+#SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -80,12 +82,16 @@ WSGI_APPLICATION = 'BeaverGo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'beavergo',
+        'USER': 'adminn',
+        'PASSWORD': 'adminn',
+        'HOST': 'localhost',
+        'PORT': '',
     }
     }
 
-
+API_KEY = 'AIzaSyAYG96Pc40hkRKaq_hdDtYcDxt-PNhRFVQ'
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
 
@@ -123,3 +129,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
+MAPBOX_KEY ='pk.eyJ1IjoieTA5MzUyMjQiLCJhIjoiY2szMTNjaW0zMDR6dTNjcGEzcDV4bHQyMCJ9.8gAk4buLrgOX0bsF94AEYQ'

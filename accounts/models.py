@@ -3,6 +3,9 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import post_save
 from django.contrib.auth.base_user import BaseUserManager
+from mapbox_location_field.spatial.models import SpatialLocationField
+
+
 class CustomUserManager(BaseUserManager):
     """
     Custom user model manager where email is the unique identifiers
@@ -39,14 +42,20 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(username, email, password, **extra_fields)
 
 class CustomUser(AbstractUser):
+    last_name = models.CharField(max_length=150)
+    first_name = models.CharField(max_length=150)
     gender = models.CharField(max_length=100)
     ssn = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
+    phone = models.CharField(max_length=50)
     image = models.ImageField(upload_to='profile_image', blank=True)
     REQUIRED_FIELDS = ['email']
     objects = CustomUserManager()
     def __str__(self):
         return self.username
+
+class SomeLocationModel(models.Model):
+    location = SpatialLocationField()
 
 # def create_profile(sender, **kwargs):
 #     if kwargs['created']:

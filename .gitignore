@@ -7,3 +7,8 @@ db.sqlite3
 # no pycache file
 *.pyc
 accounts/migrations/
+mainapp/migrations/
+loggin/migrations/
+
+# no txt
+*.txt
