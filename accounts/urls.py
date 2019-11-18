@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
     path('signup/', views.SignUp.as_view(), name='signup'),
     url(r'^profile/$', views.profile_view, name='profile_view'),
+    url(r'^password/$', views.PasswordChangeView.as_view(), name='change'),
 ]
