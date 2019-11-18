@@ -28,5 +28,4 @@ urlpatterns = [
     url(r'^passenger$', get_passenger),
     url(r'^driver$', get_driver),
     url(r'^postreceive', github_webhook),
-    url(r'^$', get_index),
 ]
