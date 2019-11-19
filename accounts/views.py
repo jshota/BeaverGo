@@ -23,7 +23,7 @@ class new_trips(CreateView):
     title="trip"
     home="BeaverGo"
     form_class = LocationForm
-    success_url = reverse_lazy('new_trips')
+    success_url = reverse_lazy('home')
     template_name = 'new_trips.html'
     #return render(request, 'new_trips.html', {'title': title, 'home': home})
 class PasswordChangeView(auth_view.PasswordChangeView):

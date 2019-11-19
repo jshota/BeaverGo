@@ -30,14 +30,14 @@
                 {% csrf_token %}
                 {{form}}
                 <br>
-                <button onclick="submission()" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Submit</button>
-                <script>
-                function submission() {
-                alert("Your request has been sent to our server, your car will be meeting you on time.");
-                }
-                </script>
-            </form>
-            {{ form.media }}
-        </body>
-    </html>
+            <button onclick="submission()" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Submit</button></a>
+            <script>
+            function submission() {
+            alert("Your request has been sent to our server, your car will be meeting you on time.");
+            }
+            </script>
+        </form>
+        {{ form.media }}
+    </body>
+</html>
 {% endblock %}
