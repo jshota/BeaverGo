@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser,SomeLocationModel
+from mapbox_location_field.spatial.forms import SpatialLocationField
 class CustomUserCreationForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
