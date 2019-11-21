@@ -1,5 +1,8 @@
-from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
 from django.views.decorators.csrf import csrf_exempt
 import os
 

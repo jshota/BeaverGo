@@ -13,10 +13,10 @@
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
 					<div>
-						<font color="#FDF370">Hi {{ user.username }}!&nbsp;&nbsp;</font>
-						<font color="#B1AA4E">SSN: {{ user.ssn}}&nbsp;&nbsp;</font>
+						<font color="#FDF370">Hi {{ user.first_name }}!&nbsp;&nbsp;</font>
+						<a href="{% url 'profile_view' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">View Profile</button></a>
 						<a href="{% url 'logout' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Log Out</button></a>
-						<a href="{% url 'password_reset' %}"><button class="btn btn-outline-primary my-2 my-sm-0" type="button">Reset Password</button></a>
+						<a href="{% url 'new_trips' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">New_Trip</button></a>
 					</div>
 				</form>
 			</div>
@@ -26,6 +26,7 @@
 		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 			<a class="navbar-brand" href="/">BeaverGo</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<img class="mb-0" src="https://raw.githubusercontent.com/jshota/BeaverGo/dev/logo.png" alt="" width="50" height="50">
 			<span class="navbar-toggler-icon"></span>
 			</button>
 			<img class="mb-0" src="https://raw.githubusercontent.com/jshota/BeaverGo/dev/logo.png" alt="" width="50" height="50">
@@ -34,7 +35,7 @@
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
 					<div>
-						<a href="{% url 'login' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Log In</button></a>
+						<a href="{% url 'login' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Login</button></a>
 						<a href="{% url 'signup' %}"><button class="btn btn-outline-primary my-2 my-sm-0" type="button">Sign Up</button></a>
 					</div>
 				</form>
@@ -55,17 +56,17 @@
 			<!-- Example row of columns -->
 			<div class="row">
 				<div class="col-md-4">
-					<h2>Providers</h2>
+					<h2>Provider</h2>
 					<p>Provide own cars for those who need cars.
 					</p>
 				</div>
 				<div class="col-md-4">
-					<h2>Passengers</h2>
+					<h2>Passenger</h2>
 					<p>Choice cars to go anyplace you want.
 					</p>
 				</div>
 				<div class="col-md-4">
-					<h2>Drivers</h2>
+					<h2>Driver</h2>
 					<p>Without auto-pilot function, providers should also be a driver.
 					</p>
 				</div>
