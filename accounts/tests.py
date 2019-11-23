@@ -1,6 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import resolve, reverse
-from accounts.views import SignUp, profile_view, new_trips, PasswordChangeView
+from accounts.views import SignUp, profile_view, new_trips, PasswordChangeView, Edit_Profile
 from accounts.models import CustomUser
 import json
 
@@ -25,6 +25,12 @@ class TestUrls(TestCase):
         url = reverse('change')
         self.assertEquals(resolve(url).func.view_class, PasswordChangeView)
 
+    # Edit Profile URL test
+    def test_edit_profile_url_resolved(self):
+        url = reverse('edit_profile')
+        self.assertEquals(resolve(url).func, Edit_Profile)
+
+
 class TestViews(TestCase):
     def setUp(self):
         self.client = Client()
@@ -32,6 +38,7 @@ class TestViews(TestCase):
         self.profile_url = reverse('profile_view')
         self.map_url = reverse('new_trips')
         self.resetpw_url = reverse('change')
+        self.edit_profile_url = reverse('edit_profile')
         CustomUser.objects.create_user(
             username = 'Jane Test',
             password = '23sdaf235@',
@@ -65,6 +72,12 @@ class TestViews(TestCase):
         response = self.client.get(self.map_url)
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'new_trips.html')
+
+    # Edit profile UI test
+    def test_edit_profile_GET(self):
+        response = self.client.get(self.edit_profile_url)
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'edit_profile.html')
 
     # Change Password test
     def test_changepw_GET(self):
