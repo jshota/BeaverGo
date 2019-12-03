@@ -30,6 +30,11 @@ class TestUrls(TestCase):
         url = reverse('edit_profile')
         self.assertEquals(resolve(url).func, Edit_Profile)
 
+    # Select Car URL test
+    def test_select_car_url_resolved(self):
+        url = reverse('select_car')
+        self.assertEquals(resolve(url).func, Select_Car)
+
 
 class TestViews(TestCase):
     def setUp(self):
@@ -39,6 +44,7 @@ class TestViews(TestCase):
         self.map_url = reverse('new_trips')
         self.resetpw_url = reverse('change')
         self.edit_profile_url = reverse('edit_profile')
+        self.select_car_url = reverse('select_car')
         CustomUser.objects.create_user(
             username = 'Jane Test',
             password = '23sdaf235@',
@@ -78,6 +84,12 @@ class TestViews(TestCase):
         response = self.client.get(self.edit_profile_url)
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'edit_profile.html')
+
+    # Select car UI test
+    def test_select_car_GET(self):
+        response = self.client.get(self.select_car_url)
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'select_car.html')
 
     # Change Password test
     def test_changepw_GET(self):
