@@ -2,7 +2,7 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
-from .forms import CustomUserCreationForm,LocationForm, CustomUserChangeForm
+from .forms import CustomUserCreationForm,LocationForm, CustomUserChangeForm, DateForm
 from django.contrib.auth.decorators import login_required
 #from BeaverGo.settings import API_KEY
 from .models import CustomUser
@@ -29,3 +29,10 @@ class new_trips(CreateView):
 class PasswordChangeView(auth_view.PasswordChangeView):
 	success_url = reverse_lazy('login')
 	template_name = 'registration/change_password.html'
+
+def Date(request):
+    title="Date"
+    home="BeaverGo"
+    form = DateForm
+    template_name = 'Date.html'
+    return render(request, 'Date.html', {'title': title, 'form': form})
