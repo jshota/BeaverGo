@@ -1,6 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import resolve, reverse
-from accounts.views import SignUp, profile_view, new_trips, PasswordChangeView, Edit_Profile
+from accounts.views import SignUp, profile_view, new_trips, PasswordChangeView, Edit_Profile, Date
 from accounts.models import CustomUser
 import json
 
@@ -35,6 +35,11 @@ class TestUrls(TestCase):
         url = reverse('select_car')
         self.assertEquals(resolve(url).func, Select_Car)
 
+    # Select Date URL test
+    def test_select_date_url_resolved(self):
+        url = reverse('Date')
+        self.assertEquals(resolve(url).func, Date)
+
 
 class TestViews(TestCase):
     def setUp(self):
@@ -45,6 +50,7 @@ class TestViews(TestCase):
         self.resetpw_url = reverse('change')
         self.edit_profile_url = reverse('edit_profile')
         self.select_car_url = reverse('select_car')
+        self.select_date_url = reverse('Date')
         CustomUser.objects.create_user(
             username = 'Jane Test',
             password = '23sdaf235@',
@@ -90,6 +96,12 @@ class TestViews(TestCase):
         response = self.client.get(self.select_car_url)
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'select_car.html')
+
+    # Select date UI test
+    def test_select_date_GET(self):
+        response = self.client.get(self.select_date_url)
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'Date.html')
 
     # Change Password test
     def test_changepw_GET(self):
