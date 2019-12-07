@@ -1,6 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import resolve, reverse
-from accounts.views import SignUp, profile_view, new_trips, PasswordChangeView, Edit_Profile, Date
+from accounts.views import SignUp, profile_view, new_trips, Edit_Profile, Date, PasswordChangeView
 from accounts.models import CustomUser
 import json
 
@@ -20,11 +20,6 @@ class TestUrls(TestCase):
         url = reverse('new_trips')
         self.assertEquals(resolve(url).func.view_class, new_trips)
 
-    # Password Reset URL test
-    def test_pwreset_url_resolved(self):
-        url = reverse('change')
-        self.assertEquals(resolve(url).func.view_class, PasswordChangeView)
-
     # Edit Profile URL test
     def test_edit_profile_url_resolved(self):
         url = reverse('edit_profile')
@@ -39,6 +34,11 @@ class TestUrls(TestCase):
     def test_select_date_url_resolved(self):
         url = reverse('Date')
         self.assertEquals(resolve(url).func, Date)
+
+    # Password Reset URL test
+    def test_pwreset_url_resolved(self):
+        url = reverse('change')
+        self.assertEquals(resolve(url).func.view_class, PasswordChangeView)
 
 
 class TestViews(TestCase):
