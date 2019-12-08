@@ -129,4 +129,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
-MAPBOX_KEY = os.environ.get('MAPBOX_KEY')
+#MAPBOX_KEY = os.environ.get('MAPBOX_KEY')
+
+MAPBOX_KEY ='pk.eyJ1IjoieTA5MzUyMjQiLCJhIjoiY2szMTNjaW0zMDR6dTNjcGEzcDV4bHQyMCJ9.8gAk4buLrgOX0bsF94AEYQ'

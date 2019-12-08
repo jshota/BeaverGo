@@ -2,7 +2,7 @@ from django.urls import reverse_lazy,reverse
 from django.views.generic.edit import CreateView,UpdateView
 from django.shortcuts import render,get_object_or_404,redirect 
 from django.http import HttpResponse
-from .forms import CustomUserCreationForm,LocationForm, CustomUserChangeForm
+from .forms import CustomUserCreationForm,LocationForm, CustomUserChangeForm, DateForm
 from django.contrib.auth.decorators import login_required
 from django import forms
 from .models import CustomUser,SomeLocationModel
@@ -47,3 +47,10 @@ def test_location(request):
     #address = content 
     #form = MyModelForm(instance=model)
     return render(request, 'test_location.html',{'content':content})
+
+def Date(request):
+    title="Date"
+    home="BeaverGo"
+    form = DateForm
+    template_name = 'Date.html'
+    return render(request, 'Date.html', {'title': title, 'form': form})

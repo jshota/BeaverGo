@@ -1,17 +1,43 @@
-  
-<html>
-    <head>
-        {% load mapbox_location_field_tags %}
-        {% location_field_includes %}
-        {% include_jquery %}
-    </head>
-    <body>
-    <form method="post">
-        {% csrf_token %}
-        {{form}}
-        <input type="submit" value="submit">
-    </form>
-{{ form.media }}
-    
+{% extends 'base.html' %}
+{% block title %}BeaverGo{% endblock %}
+{% block content %}
+    <html>
+        <head>
+            {% load mapbox_location_field_tags %}
+            {% location_field_includes %}
+            {% include_jquery %}
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="/">BeaverGo</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <img class="mb-0" src="https://raw.githubusercontent.com/jshota/BeaverGo/dev/logo.png" alt="" width="50" height="50">
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <div>
+                            <font color="#FDF370">Hi {{ user.first_name }}!&nbsp;&nbsp;</font>
+                            <a href="{% url 'profile_view' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">View Profile</button></a>
+                            <a href="{% url 'logout' %}"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Log Out</button></a>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+            <form method="post" style="padding-top:5rem">
+                {% csrf_token %}
+                {{form}}
+                <br>
+            <button onclick="submission()" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Submit</button></a>
+            <script>
+            function submission() {
+            alert("Your request has been sent to our server, your car will be meeting you on time.");
+            }
+            </script>
+        </form>
+        {{ form.media }}
     </body>
 </html>
+{% endblock %}
