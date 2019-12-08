@@ -7,6 +7,8 @@ db.sqlite3
 # no pycache file
 *.pyc
 
+# no setting file
+
 # no migrations folder
 accounts/migrations/
 mainapp/migrations/
