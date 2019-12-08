@@ -1,11 +1,11 @@
 from django.db import models
+from django.urls import reverse_lazy
 #from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import post_save
 from django.contrib.auth.base_user import BaseUserManager
 from mapbox_location_field.spatial.models import SpatialLocationField
-
-
+from mapbox_location_field.models import AddressAutoHiddenField
 class CustomUserManager(BaseUserManager):
     """
     Custom user model manager where email is the unique identifiers
@@ -57,6 +57,12 @@ class CustomUser(AbstractUser):
 
 class SomeLocationModel(models.Model):
     location = SpatialLocationField()
+    address = AddressAutoHiddenField(max_length=140, default="")
+    
+    """def change_view(self, request, object_id, form_url='', extra_context=None):
+        extra_context = extra_context or {}
+        extra_context["map_input_media"] = Media(js=("mapbox_location_field/js/map_input.js",))
+        return super().change_view(request, object_id, form_url, extra_context=extra_context, )"""
 
 # def create_profile(sender, **kwargs):
 #     if kwargs['created']:
