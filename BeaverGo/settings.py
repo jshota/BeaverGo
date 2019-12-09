@@ -84,8 +84,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'beavergo',
-        'USER': 'tsungyu',
-        'PASSWORD': '0719',
+        'USER': 'adminn',
+        'PASSWORD': 'adminn',
         'HOST': 'localhost',
         'PORT': '',
     }
