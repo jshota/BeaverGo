@@ -20,10 +20,11 @@
 		</div>
 	</nav>
 	<form method="post">
-		<div style="padding-top: 5rem; padding-left: 1rem">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button type="submit" class="btn btn-outline-success">Save Changes</button>
-		</div>
+		<button onclick="submission()" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Submit</button>
+		<script>
+		function submission() {
+		alert("Your request has been sent to our server, your car will be meeting you on time.");
+		}
+		</script>
 	</form>
 {% endblock %}

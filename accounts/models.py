@@ -16,9 +16,9 @@ class CustomUserManager(BaseUserManager):
         Create and save a User with the given email and password.
         """
         if not username:
-            raise ValueError(_('The username must be set'))
+            raise ValueError(('The username must be set'))
         if not email:
-            raise ValueError(_('The Email must be set'))
+            raise ValueError(('The Email must be set'))
         #username = username
         #user = self.model(email=email, **extra_fields)
         email = self.normalize_email(email)
@@ -36,9 +36,9 @@ class CustomUserManager(BaseUserManager):
         extra_fields.setdefault('is_active', True)
 
         if extra_fields.get('is_staff') is not True:
-            raise ValueError(_('Superuser must have is_staff=True.'))
+            raise ValueError(('Superuser must have is_staff=True.'))
         if extra_fields.get('is_superuser') is not True:
-            raise ValueError(_('Superuser must have is_superuser=True.'))
+            raise ValueError(('Superuser must have is_superuser=True.'))
         return self.create_user(username, email, password, **extra_fields)
 
 class CustomUser(AbstractUser):
@@ -48,7 +48,7 @@ class CustomUser(AbstractUser):
     address = models.CharField(max_length=150, default="")
     ssn = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
-    phone = models.CharField(max_length=50,default="")
+    phone = models.CharField(max_length=50, default="")
     image = models.ImageField(upload_to='profile_image', blank=True)
     REQUIRED_FIELDS = ['email']
     objects = CustomUserManager()
@@ -58,14 +58,3 @@ class CustomUser(AbstractUser):
 class SomeLocationModel(models.Model):
     location = SpatialLocationField()
     address = AddressAutoHiddenField(max_length=140, default="")
-    
-    """def change_view(self, request, object_id, form_url='', extra_context=None):
-        extra_context = extra_context or {}
-        extra_context["map_input_media"] = Media(js=("mapbox_location_field/js/map_input.js",))
-        return super().change_view(request, object_id, form_url, extra_context=extra_context, )"""
-
-# def create_profile(sender, **kwargs):
-#     if kwargs['created']:
-#         user_profile = CustomUser.objects.create(user=kwargs['instance'])
-
-# post_save.connect(create_profile, sender=CustomUser)

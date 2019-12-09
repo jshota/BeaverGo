@@ -20,10 +20,28 @@
 		</div>
 	</nav>
 	<form method="post">
+		{% csrf_token %}
 		<div style="padding-top: 5rem; padding-left: 1rem">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button type="submit" class="btn btn-outline-success">Save Changes</button>
+			<div class="form-row align-items-center">
+				<div class="col-auto my-1">
+					<label class="mr-sm-2" for="carModel">Car Model</label>
+					<select class="custom-select mr-sm-2" id="carModel" name = 'carModel'>
+						<option selected>Choose...</option>
+						<option value="Toyota">Toyota</option>
+						<option value="Benz">Benz</option>
+						<option value="BMW">BMW</option>
+						<option value="Audi">Audi</option>
+						<option value="Honda">Honda</option>
+						<option value="Mitsubishi">Mitsubishi</option>
+					</select>
+				</div>
+			</div>
+			Select Reservation Time:<br>
+			<input type="datetime-local" id="reservation_time" label = 'reservation_time'
+			name="reservation_time" value="2019-12-7T19:30"
+			min="2019-12-7T00:00" max="2080-12-31T23:59">
+			<br><br>
+			<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Next</button>
 		</div>
 	</form>
 {% endblock %}

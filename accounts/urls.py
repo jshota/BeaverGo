@@ -10,5 +10,7 @@ urlpatterns = [
     url(r'^password/$', views.PasswordChangeView.as_view(), name='change'),
     url(r'^test_location/$', views.test_location, name='test_location'),
     url(r'^edit_profile/$', views.Edit_Profile, name='edit_profile'),
-    url(r'^Date/$', views.Date, name='Date'),
+    # url(r'^Date/$', views.Date, name='Date'),
+    url(r'^date_select/$', views.date_select, name='date_select'),
+    url(r'^model_select/$', views.model_select, name='model_select'),
 ]
